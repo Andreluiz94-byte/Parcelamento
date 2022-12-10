@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcelamento de Valores</title>
+    <style>
+
+        /* CSS para estilizar a página */
+      body {
+        font-family: sans-serif;
+        background-color: #fff4ce;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 0.5em;
+      }
+      p {
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 0.5em;
+      }
+      input[type="number"] {
+        font-size: 1.2em;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 30%;
+        margin-bottom: 0.5em;
+      }
+      button {
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        background-color: #337ab7;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+         .aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 200px;
+        padding: 1em;
+        background-color: #333;
+        color: #fff;
+      }
+
+      
+
+      aside button {
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        background-color: #337ab7;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 0.5em;
+        width: 100%;
+      }
+      /* Regras CSS para dispositivos móveis */
+      @media (max-width: 768px) {
+        body {
+          padding: 1em;
+        }
+        h1 {
+          font-size: 1.5em;
+          margin-bottom: 0.25em;
+        }
+        p {
+          font-size: 1em;
+          margin-bottom: 0.25em;
+        }
+        input[type="number"] {
+          width: 100%;
+          margin-bottom: 0.25em;
+        }
+        button {
+          font-size: 1em;
+          padding: 0.25em 0.5em;
+        }
+
+    </style>
+  
+     
+
+
+ 
+  
+</head>
+
+  <body>
+    <div class="aside">
+       <div class="aside button"></div>
+    </div>
+    <h1>Parcelamento de Valores</h1>
+    <p>Insira o valor que deseja parcelar:</p>
+    <input type="number" id="valor">
+    <p>Insira o número de parcelas:</p>
+    <input type="number" id="parcelas">
+    <button onclick="parcelar()">Parcelar</button>
+    <p>O valor de cada parcela é:</p>
+    <p id="resultado"></p>
+    <script>
+      // Função JavaScript para calcular o valor das parcelas
+      function parcelar() {
+        // Obter os valores inseridos pelo usuário
+        var valor = document.getElementById("valor").value;
+        var parcelas = document.getElementById("parcelas").value;
+        
+        // Calcular o valor de cada parcela
+        var valorParcela = valor / parcelas;
+        
+        // Mostrar o resultado para o usuário
+        document.getElementById("resultado").innerHTML = "R$ " + valorParcela.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
